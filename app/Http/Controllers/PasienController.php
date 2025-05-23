@@ -33,12 +33,14 @@ class PasienController extends Controller
             'nama_pasien' => 'required|string|max:255',
             'alamat' => 'required|string',
             'no_telepon' => 'required|string|max:20',
-            'id_rumah_sakit' => 'required|exists:rumah_sakits,id',
+            'id_rumah_sakit' => 'required|exists:rumah_sakit,id',
         ]);
 
         $pasien = Pasien::create($validated);
 
-        return response()->json(['success' => true, 'pasien' => $pasien]);
+        // return response()->json(['success' => true, 'pasien' => $pasien]);
+        return redirect()->route('pasien.index')->with('success', 'Data berhasil ditambahkan!');
+
     }
 
     public function create()
