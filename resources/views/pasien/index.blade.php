@@ -69,7 +69,7 @@
                                 <td class="border px-4 py-2">${pasien.no_telepon}</td>
                                 <td class="border px-4 py-2">${pasien.rumah_sakit ? pasien.rumah_sakit.nama_rumah_sakit : ''}</td>
                                 <td class="border px-4 py-2 space-x-2">
-                                    <a href="/pasiens/${pasien.id}/edit" class="bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-1 rounded">Edit</a>
+                                    <a href="/pasien/${pasien.id}/edit" class="bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-1 rounded">Edit</a>
                                     <button onclick="deletePasien(${pasien.id})" class="bg-red-600 hover:bg-red-800 text-white px-3 py-1 rounded">Hapus</button>
                                 </td>
                             </tr>

@@ -55,13 +55,23 @@ class PasienController extends Controller
             'nama_pasien' => 'required|string|max:255',
             'alamat' => 'required|string',
             'no_telepon' => 'required|string|max:20',
-            'id_rumah_sakit' => 'required|exists:rumah_sakits,id',
+            'id_rumah_sakit' => 'required|exists:rumah_sakit,id',
         ]);
 
         $pasien->update($validated);
 
-        return response()->json(['success' => true, 'pasien' => $pasien]);
+        // return response()->json(['success' => true, 'pasien' => $pasien]);
+        return redirect()->route('pasien.index')->with('success', 'Data berhasil diedit!');
     }
+
+    public function edit($id)
+    {
+        $pasien = Pasien::findOrFail($id);
+        $rumahSakits = RumahSakit::all(); // ambil semua rumah sakit
+
+        return view('pasien.edit', compact('pasien', 'rumahSakits'));
+    }
+
 
     public function destroy(Pasien $pasien)
     {
