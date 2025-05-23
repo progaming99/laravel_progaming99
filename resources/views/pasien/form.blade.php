@@ -25,11 +25,12 @@
 <div class="mt-4">
     <label class="block font-semibold mb-1">Rumah Sakit</label>
     <select name="id_rumah_sakit" class="w-full border px-3 py-2 rounded" required>
-        <option value="">Pilih Rumah Sakit</option>
-        @foreach ($rumahSakits as $rs)
-            <option value="{{ $rs->id }}" {{ old('id_rumah_sakit', $isEdit ? $pasien->rumah_sakit_id : '') == $rs->id ? 'selected' : '' }}>
-                {{ $rs->nama_rumah_sakit }}
-            </option>
-        @endforeach
-    </select>
+    <option value="">Pilih Rumah Sakit</option>
+    @foreach ($rumahSakits as $rs)
+        <option value="{{ $rs->id }}" {{ old('id_rumah_sakit', $isEdit ? $pasien->id_rumah_sakit : '') == $rs->id ? 'selected' : '' }}>
+            {{ $rs->nama_rumah_sakit }}
+        </option>
+    @endforeach
+</select>
+
 </div>
