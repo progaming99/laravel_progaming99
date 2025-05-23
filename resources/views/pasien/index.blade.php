@@ -11,8 +11,11 @@
                 @endforeach
             </select>
         </div>
-
-        <a href="{{ route('pasien.create') }}" class="mb-4 inline-block bg-green-600 text-black px-4 py-2 rounded hover:bg-green-700">
+<a href="{{ route('rumah-sakit.index') }}"
+               class="bg-blue-600 text-black px-4 py-2 rounded hover:bg-blue-700 transition duration-200">
+                Lihat Rumah Sakit
+            </a>
+        <a href="{{ route('pasien.create') }}" class="mb-4 inline-block bg-green-600 font-semibold text-black px-4 py-2 rounded hover:bg-green-700">
             + Tambah Pasien
         </a>
 
